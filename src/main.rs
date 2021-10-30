@@ -10,7 +10,7 @@ async fn main() {
 	let listener = TcpListener::bind("localhost:8080").await.unwrap();
 
 	// Create a sender/receiver broadcast channel (capacity)
-	let (tx, _rx) = broadcast::channel::<String>(10);
+	let (tx, _rx) = broadcast::channel(10);
 
 	// Keep accepting sockets
 	loop {
